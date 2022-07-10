@@ -9,11 +9,11 @@ CREATE TABLE companies (
 CREATE TABLE users (
   username VARCHAR(25) PRIMARY KEY,
   password TEXT NOT NULL,
-  first_name TEXT NOT NULL,
-  last_name TEXT NOT NULL,
-  email TEXT NOT NULL
+  first_name TEXT,
+  last_name TEXT,
+  email TEXT
     CHECK (position('@' IN email) > 1),
-  is_admin BOOLEAN NOT NULL DEFAULT FALSE
+  is_admin BOOLEAN DEFAULT FALSE
 );
 
 CREATE TABLE jobs (
